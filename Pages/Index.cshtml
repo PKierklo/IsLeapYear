@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h1 class="display-4">Welcome</h1>
+    <form method="post">
+        <label asp-for="FizzBuzz.Year"></label>
+        <input asp-for="FizzBuzz.Year" class="form-control" /><br />
+        <label asp-for="FizzBuzz.Name"></label>
+        <input asp-for="FizzBuzz.Name" class="form-control" /><br />
+        <button type="submit" class="btn btn-primary">Zatwierdź</button>
+    </form><br />
+    <div class="@Model?.FizzBuzz?.AlertStyle" role="alert">
+        @Model?.FizzBuzz?.AlertInfo
+    </div>
+    <span asp-validation-for="FizzBuzz.Year" class="text-danger" style="font-weight:bold;"></span><br />
+    <span asp-validation-for="FizzBuzz.Name" class="text-danger" style="font-weight:bold;"></span>
+</div>

@@ -1,0 +1,13 @@
+﻿@page
+@model SavedInSessionModel
+@{
+    ViewData["Title"] = "Data in session";
+}
+<p>Dane zapisane w sesji:</p>
+@if (!string.IsNullOrEmpty(Model.SessionData))
+{
+    foreach (var item in Model.SessionData.Split('\n'))
+    {
+        <p>@item</p>
+    }
+}
